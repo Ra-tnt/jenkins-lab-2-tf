@@ -17,7 +17,7 @@ pipeline {
   stages {
       stage("init") {
           steps {
-              'make init'
+              sh 'make init'
           }
       }
       stage("workspace") {
@@ -32,12 +32,12 @@ fi
       }
       stage("plan") {
           steps {
-              'make plan'
+              sh 'make plan'
           }
       }
       stage("apply") {
           steps {
-              'make apply'
+              sh 'make apply'
           }
       }
   }
