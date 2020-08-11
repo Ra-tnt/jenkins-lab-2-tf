@@ -2,7 +2,7 @@ pipeline {
   agent {
     docker {
       image "bryandollery/terraform-packer-aws-alpine"
-      args "-u root"
+      args "-u root --entrypoint='' --rm"
     }
   }
   environment {
@@ -17,7 +17,7 @@ pipeline {
   stages {
       stage("init") {
           steps {
-              make init
+              'make init'
           }
       }
       stage("workspace") {
@@ -32,12 +32,12 @@ fi
       }
       stage("plan") {
           steps {
-              make plan
+              'make plan'
           }
       }
       stage("apply") {
           steps {
-              make apply
+              'make apply'
           }
       }
   }
