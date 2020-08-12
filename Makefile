@@ -27,6 +27,7 @@ fmt:
 	time terraform fmt -recursive
 
 plan:
+	terraform force-unlock f116e734-7522-ca21-46e5-da8785e379fa
 	time terraform plan -out plan.out -var-file=terraform.tfvars
 
 apply:
