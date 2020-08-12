@@ -24,7 +24,7 @@ pipeline {
           steps {
               sh """
 terraform workspace select jenkins-lab-2
-if [[ $? -ne 0 ]];
+if [[ \$? -ne 0 ]];
   terraform workspace new jenkins-lab-2
 fi
 """
