@@ -23,8 +23,9 @@ pipeline {
       stage("workspace") {
           steps {
               sh """
-terraform workspace new Raghadq-tf
 terraform workspace select Raghadq-tf
+if [[ \$? -ne 0 ]]; then
+  terraform workspace new Raghadq-tf
 fi
 """
           }
