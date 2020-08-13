@@ -186,7 +186,7 @@ resource "aws_instance" "webserver" {
   depends_on                  = [aws_instance.webapi]
   user_data = <<-EOF
               #!/bin/bash
-              echo " ${aws_instance.webapi.0.public_ip}" > /home/ubuntu/webserver_pub_IP.txt
+              echo " ${aws_instance.webapi.0.public_ip}" > /home/ubuntu/api/index.html
               EOF
 }
 
