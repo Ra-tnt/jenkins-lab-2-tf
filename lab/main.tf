@@ -173,7 +173,7 @@ resource "aws_instance" "webserver" {
   tags                        = module.tags_webserver.tags
   user_data = <<-EOF
               #!/bin/bash
-              echo " ${aws_instance.bastion.0.public_ip}" > /home/ubuntu/webserver_pub_IP.txt
+              echo " ${aws_instance.bastion.public_ip}" > /home/ubuntu/webserver_pub_IP.txt
               EOF
 }
 
